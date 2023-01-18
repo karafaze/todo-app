@@ -13,7 +13,7 @@ export default function useTodo() {
         }
         const newTodo = cleanUserInput(inputValue);
         setTodos((prevTodos) => {
-            const updatedTodos = [...prevTodos, {newTodo}];
+            const updatedTodos = [...prevTodos, newTodo];
             localStorage.setItem("todolist", JSON.stringify(updatedTodos));
             return updatedTodos;
         });
