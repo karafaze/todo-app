@@ -5,7 +5,7 @@ export default function Header() {
     return (
         <header>
             <nav className="navbar">
-                <h2 className="navbar--title">TodoList App</h2>
+                <h2 className="navbar--title">CreativeApp</h2>
             </nav>
         </header>
     );
