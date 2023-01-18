@@ -1,0 +1,11 @@
+.main--todolist{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main--todolist__title{
+    align-self: flex-start;
+}

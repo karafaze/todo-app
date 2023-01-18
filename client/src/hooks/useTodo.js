@@ -25,7 +25,15 @@ export default function useTodo() {
         setInputValue(event.target.value);
     }
 
-    return { handleSubmit, inputRef, handleChange, inputValue, todos }
+    function removeTodo(oldTodo){
+        setTodos(() => {
+            const updatedTodos = todos.filter(todo => todo !== oldTodo)
+            localStorage.setItem("todolist", JSON.stringify(updatedTodos));
+            return updatedTodos;
+        });
+    }
+
+    return { handleSubmit, inputRef, handleChange, inputValue, todos, removeTodo }
 }
 
 function cleanUserInput(text) {

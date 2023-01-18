@@ -10,7 +10,7 @@ export default function TodoInput(props) {
             <h1>TodoList App </h1>
             <form className="main--form" onSubmit={handleSubmit}>
                 <label htmlFor="todoInput">
-                    Add a new item to our TodoList
+                    Add a new item to your TodoList
                 </label>
                 <input
                     id="todoInput"
