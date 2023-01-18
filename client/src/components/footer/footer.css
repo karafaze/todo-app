@@ -1,4 +1,6 @@
 footer{
     padding: 1em;
     font-family: var(--font-title);
+    position: absolute;
+    bottom: 0;
 }

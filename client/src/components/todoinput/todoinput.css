@@ -1,0 +1,12 @@
+.main--input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main--form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
