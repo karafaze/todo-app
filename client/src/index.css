@@ -1,4 +1,21 @@
+/* Initialized colors variables from https://colorhunt.co/palette/222831393e4600adb5eeeeee */
+:root{
+    --primary-color: #222831;
+    --secondary-color: #393E46;
+    --tertiary-color: #00ADB5;
+    --quaternary-color: #EEEEEE;
+    --font-text: 'Karla', sans-serif;
+    --font-title: 'Righteous', cursive;
+}
+
 body {
     margin: 0;
     padding: 0;
+    font-family: var(--font-text);
+    color: var(--primary-color);
+    background-color: var(--quaternary-color);
 }
+
+/* *{
+    border: 1px solid red;
+} */

@@ -1,0 +1,12 @@
+header{
+    padding: 1em;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar--title{
+    font-family: var(--font-title);
+}
