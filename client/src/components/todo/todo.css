@@ -23,9 +23,15 @@
     width: 5%;
 }
 .item--icon__container:nth-child(3){
-    width: 30%;
+    width: 20%;
+}
+.item--icon__container:nth-child(4){
+    width: 20%;
+}
+.item--title{
+    width: 40%;
 }
 
-.item--title{
-    width: 50%;
+.urgent{
+    color: red;
 }

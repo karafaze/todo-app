@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import "./todo.css";
 
 export default function Todo(props) {
-    const { item, removeTodo } = props.data;
-    const [done, setDone] = useState(false);
+    const { item, removeTodo, saveTodos } = props.data;
 
-    const markedAsDone = done ? "circle-fill" : "blank-circle-line";
+    let iconClass = item.isDone === true ? "circle-fill" : "blank-circle-line";
 
     function handleClick() {
-        setDone((prevDone) => !prevDone);
+        item.isDone = !item.isDone;
+        saveTodos(item);
     }
 
     return (
@@ -17,16 +17,20 @@ export default function Todo(props) {
                 <div className="item--icon__container">
                     <i
                         onClick={handleClick}
-                        className={`ri-checkbox-${markedAsDone} item--icon`}
+                        className={`ri-checkbox-${iconClass} item--icon`}
                     ></i>
                 </div>
-                <p className="item--title">{item} </p>
+                <p className="item--title">{item.name} </p>
                 <div className="item--icon__container">
-                    <span className="item--icon__name">Delete task</span>
+                    <span className="item--icon__name">Delete</span>
                     <i
                         onClick={() => removeTodo(item)}
                         className="ri-delete-bin-fill item--icon"
                     ></i>
+                </div>
+                <div className="item--icon__container">
+                    <span className="item--icon__name">Mark as urgent</span>
+                    <i className="ri-fire-line item--icon"></i>
                 </div>
             </div>
         </React.Fragment>
