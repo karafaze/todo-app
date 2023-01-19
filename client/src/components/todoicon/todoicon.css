@@ -1,0 +1,33 @@
+
+.item--icon{
+    font-size: 1.7em;
+    cursor: pointer;
+}
+
+.item--icon__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .7em;
+}
+
+.item--icon__container > span{
+    font-size: 1.05em;
+}
+
+.item--icon__container:nth-child(1){
+    width: 5%;
+}
+.item--icon__container:nth-child(3){
+    width: 20%;
+}
+.item--icon__container:nth-child(4){
+    width: 20%;
+}
+.item--title{
+    width: 40%;
+}
+
+.urgent{
+    color: rgb(182, 24, 24);
+}

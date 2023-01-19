@@ -22,3 +22,21 @@ export default function TodoList(props) {
     }
 
 }
+// export default function TodoList() {
+//     const {todos, removeTodo} = useTodo();
+
+//     if (todos.length === 0){
+//         return <p className="main--todolist__empty">You have nothing to do bro</p>
+//     } else {
+//         const customTodos = todos.map((item) => {
+//             return <Todo key={nanoid()} data={{item, removeTodo}} />;
+//         });
+//         return (
+//             <div className="main--todolist">
+//                 <h2 className="main--todolist__title">Items in your todo :</h2>
+//                 <div className="main--todolist__items">{customTodos}</div>
+//             </div>
+//         );
+//     }
+
+// }

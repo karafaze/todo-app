@@ -10,3 +10,22 @@
     flex-direction: column;
     gap: 1em;
 }
+
+.main--form > label{
+    font-size: 1.1em;
+}
+
+.main--form > button {
+    padding: .3em 4em;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    font-size: 1.1em;
+    font-family: var(--font-text);
+    font-weight: 800;
+}
+
+.main--form > input{
+    padding: .3em;
+    font-size: 1.1em;
+    font-family: var(--font-text);
+}

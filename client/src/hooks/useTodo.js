@@ -19,7 +19,7 @@ export default function useTodo() {
             isUrgent: false,
         };
         setTodos(prevTodoList => {
-            const updatedTodos = [...prevTodoList, newTodo];
+            const updatedTodos = [newTodo, ...prevTodoList];
             storeTodoList(updatedTodos)
             return updatedTodos;
         });

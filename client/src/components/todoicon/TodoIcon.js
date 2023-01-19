@@ -1,8 +1,7 @@
 import React from "react";
 import "./todoicon.css";
 
-export default function TodoIcon({item, type, updateTodo = null, removeTodo = null, text}) {
-
+export default function TodoIcon({item, type, updateTodo, removeTodo, text}) {
     function handleClick(iconType, item) {
         console.log('button click')
         switch (iconType) {
@@ -32,6 +31,8 @@ export default function TodoIcon({item, type, updateTodo = null, removeTodo = nu
                 return getFireIcon(item);
             case "delete":
                 return "ri-delete-bin-fill";
+            default: 
+                break;
         }
     }
 
@@ -47,7 +48,7 @@ export default function TodoIcon({item, type, updateTodo = null, removeTodo = nu
 
     return (
         <div className="item--icon__container">
-            { text ? text : null}
+            { text ? <span>{text}</span> : null}
             <i onClick={() => handleClick(type, item)} className={`${iconClass} item--icon`}></i>
         </div>
     );
