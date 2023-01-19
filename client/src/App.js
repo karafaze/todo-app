@@ -13,7 +13,7 @@ export default function App() {
         inputRef,
         inputValue,
         removeTodo,
-        saveTodos,
+        updateTodo,
     } = useTodo();
     return (
         <React.Fragment>
@@ -23,7 +23,7 @@ export default function App() {
                     data={{ handleChange, handleSubmit, inputRef, inputValue }}
                 />
                 <TodoList
-                    data={{ todos, removeTodo, saveTodos }}
+                    data={{ todos, removeTodo, updateTodo }}
                 />
             </main>
             <Footer />

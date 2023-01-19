@@ -18,35 +18,42 @@ export default function useTodo() {
             isDone: false,
             isUrgent: false,
         };
-        setTodos((prevTodos) => {
-            const updatedTodos = [...prevTodos, newTodo];
-            localStorage.setItem("todolist", JSON.stringify(updatedTodos));
+        setTodos(prevTodoList => {
+            const updatedTodos = [...prevTodoList, newTodo];
+            storeTodoList(updatedTodos)
             return updatedTodos;
         });
         setInputValue("");
         inputRef.current.focus();
     }
 
-    function saveTodos(oldTodo) {
-        setTodos((prevTodos) => {
-            const updatedTodos = [...prevTodos.filter(todo => todo.name !== oldTodo.name), oldTodo];
-            localStorage.setItem("todolist", JSON.stringify(updatedTodos));
-            return updatedTodos;
-        });
-    }
-
     function handleChange(event) {
         setInputValue(event.target.value);
     }
 
+    function updateTodo(updatedTodo){
+        setTodos(prevTodoList => {
+            const updatedTodoList = prevTodoList.filter(todoItem => {
+                if (todoItem.name === updatedTodo.name){
+                    return updatedTodo;
+                }
+                return todoItem
+            })
+            storeTodoList(updatedTodoList)
+            return updatedTodoList;
+        })
+    }
+
     function removeTodo(oldTodo) {
-        setTodos(() => {
-            const updatedTodos = todos.filter(
-                (todo) => todo.name !== oldTodo.name
-            );
-            localStorage.setItem("todolist", JSON.stringify(updatedTodos));
+        setTodos(prevTodoList => {
+            const updatedTodos = prevTodoList.filter(todoItem => todoItem.name !== oldTodo.name);
+            storeTodoList(updatedTodos);
             return updatedTodos;
         });
+    }
+
+    function storeTodoList(todoArr){
+        localStorage.setItem("todolist", JSON.stringify(todoArr));
     }
 
     return {
@@ -56,7 +63,7 @@ export default function useTodo() {
         inputValue,
         todos,
         removeTodo,
-        saveTodos,
+        updateTodo,
     };
 }
 

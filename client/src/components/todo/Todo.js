@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./todo.css";
 
 export default function Todo(props) {
-    const { item, removeTodo, saveTodos } = props.data;
+    const { item, removeTodo, updateTodo } = props.data;
 
     let iconClass = item.isDone === true ? "circle-fill" : "blank-circle-line";
 
     function handleClick() {
         item.isDone = !item.isDone;
-        saveTodos(item);
+        updateTodo(item);
     }
 
     return (
