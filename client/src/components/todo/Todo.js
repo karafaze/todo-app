@@ -1,37 +1,22 @@
 import React from "react";
+import TodoIcon from "../todoicon/TodoIcon";
 import "./todo.css";
 
 export default function Todo(props) {
     const { item, removeTodo, updateTodo } = props.data;
-
-    let iconClass = item.isDone === true ? "circle-fill" : "blank-circle-line";
-
-    function handleClick() {
-        item.isDone = !item.isDone;
-        updateTodo(item);
-    }
-
     return (
         <React.Fragment>
             <div className="item">
-                <div className="item--icon__container">
-                    <i
-                        onClick={handleClick}
-                        className={`ri-checkbox-${iconClass} item--icon`}
-                    ></i>
-                </div>
+                <TodoIcon
+                    item={item} type={'checkbox'} updateTodo={updateTodo}
+                />
                 <p className="item--title">{item.name} </p>
-                <div className="item--icon__container">
-                    <span className="item--icon__name">Delete</span>
-                    <i
-                        onClick={() => removeTodo(item)}
-                        className="ri-delete-bin-fill item--icon"
-                    ></i>
-                </div>
-                <div className="item--icon__container">
-                    <span className="item--icon__name">Mark as urgent</span>
-                    <i className="ri-fire-line item--icon"></i>
-                </div>
+                <TodoIcon 
+                    item={item} type={'delete'} removeTodo={removeTodo} text={"Delete"}
+                />
+                <TodoIcon
+                    item={item} type={'fire'} updateTodo={updateTodo} text={"Urgent"}
+                />
             </div>
         </React.Fragment>
     );
