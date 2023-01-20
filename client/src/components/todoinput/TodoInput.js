@@ -2,6 +2,7 @@ import React from "react";
 import "./todoinput.css";
 
 export default function TodoInput(props) {
+    // handles part where user enter its own todo inputs
     const { handleSubmit, handleChange, inputRef, inputValue } = props.data
 
     return (

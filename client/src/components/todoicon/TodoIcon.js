@@ -2,18 +2,23 @@ import React from "react";
 import "./todoicon.css";
 
 export default function TodoIcon({item, type, updateTodo, removeTodo, text}) {
+    // we receive multiples props here so the todoIcon can be flexible and global
+
     function handleClick(iconType, item) {
-        console.log('button click')
+        // when an icon is clicked, we first check which one is it
         switch (iconType) {
             case "checkbox":
+                // if checkbox, we reverse old isDone property and update todoList
                 item.isDone = !item.isDone;
                 updateTodo(item);
                 break;
             case "fire":
+                // if fire, we reverse old isUrgent property and update todoList
                 item.isUrgent = !item.isUrgent;
                 updateTodo(item);
                 break;
             case "delete":
+                // if delete, we simply remove the todo from the list
                 removeTodo(item);
                 break;
             default:
@@ -21,9 +26,24 @@ export default function TodoIcon({item, type, updateTodo, removeTodo, text}) {
         }
     }
 
-    const iconClass = getIcon(item, type);
+    // below, we will handle how each icon is displayed
+
+    function getCheckboxIcon(item) {
+        // if todo isDone is true, we return a checked checkbox else and empty circle
+        return item.isDone
+            ? "ri-checkbox-circle-fill"
+            : "ri-checkbox-blank-circle-line";
+    }
+
+    function getFireIcon(item) {
+        // if todo isUrgent is true, we return a red filled fire icon
+        // else we return an empty icon
+        return item.isUrgent ? "ri-fire-fill urgent" : "ri-fire-line";
+    }
 
     function getIcon(item, type) {
+        // with the switch below, we will use the functions above 
+        // and the type props what kind of icon we return
         switch (type) {
             case "checkbox":
                 return getCheckboxIcon(item);
@@ -36,15 +56,10 @@ export default function TodoIcon({item, type, updateTodo, removeTodo, text}) {
         }
     }
 
-    function getCheckboxIcon(item) {
-        return item.isDone
-            ? "ri-checkbox-circle-fill"
-            : "ri-checkbox-blank-circle-line";
-    }
+    // then we make use of the getIcon to dynamically set the 
+    // class to be used for an icon
+    const iconClass = getIcon(item, type);
 
-    function getFireIcon(item) {
-        return item.isUrgent ? "ri-fire-fill urgent" : "ri-fire-line";
-    }
 
     return (
         <div className="item--icon__container">
