@@ -15,7 +15,6 @@
 }
 
 .item--icon__container:nth-child(1){
-    border: 1px solid black;
     width: 50px;
     margin-right: .7em;
 }
