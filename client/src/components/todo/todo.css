@@ -3,11 +3,16 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1em;
-    width: 80vw;
+    width: 100%;
 }
 
 .item--title{
     font-size: 1.1em;
     font-weight: 800;
+}
+
+@media screen and (min-width: 768px){
+    .item{
+        width: 80vw;
+    }
 }

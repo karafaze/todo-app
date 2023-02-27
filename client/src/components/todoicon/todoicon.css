@@ -1,4 +1,3 @@
-
 .item--icon{
     font-size: 1.7em;
     cursor: pointer;
@@ -8,7 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .7em;
+    gap: .3em;
 }
 
 .item--icon__container > span{
@@ -16,16 +15,23 @@
 }
 
 .item--icon__container:nth-child(1){
-    width: 5%;
+    border: 1px solid black;
+    width: 50px;
+    margin-right: .7em;
 }
+
 .item--icon__container:nth-child(3){
-    width: 20%;
+    width: 110px;
 }
+
 .item--icon__container:nth-child(4){
-    width: 20%;
+    width: 110px;
+    margin-left: .7em;
 }
+
 .item--title{
-    width: 40%;
+    width: 90%;
+    margin-right: auto;
 }
 
 .urgent{
